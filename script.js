@@ -33,9 +33,26 @@ class GoogleDorksApp {
         
         // Assistant functionality
         const toggleAssistant = document.getElementById('toggleAssistant');
+        if (toggleAssistant) {
+            toggleAssistant.addEventListener('click', () => this.toggleAssistant());
+        }
+
         const closeAssistant = document.getElementById('closeAssistant');
+        if (closeAssistant) {
+            closeAssistant.addEventListener('click', () => this.closeAssistant());
+        }
+
         const sendMessage = document.getElementById('sendMessage');
+        if (sendMessage) {
+            sendMessage.addEventListener('click', () => this.handleAssistantMessage());
+        }
+
         const assistantInput = document.getElementById('assistantInput');
+        if (assistantInput) {
+            assistantInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') this.handleAssistantMessage();
+            });
+        }
         
         toggleAssistant.addEventListener('click', () => this.toggleAssistant());
         closeAssistant.addEventListener('click', () => this.closeAssistant());
