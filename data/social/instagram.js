@@ -29,5 +29,35 @@ export const instagramDorks = [
         code: 'site:instagram.com "story" OR "highlight" OR "stories"',
         description: "Recherche du contenu Stories Instagram",
         category: "social"
+    },
+    {
+        title: "Instagram - Cibler un compte précis (par pseudo)",
+        code: 'site:instagram.com inurl:USERNAME',
+        description: "Recherche directe vers le profil d’un utilisateur Instagram spécifique (remplacer USERNAME)",
+        category: "social"
+    },
+    {
+        title: "Instagram - Bio d’un utilisateur spécifique",
+        code: 'site:instagram.com inurl:USERNAME "bio"',
+        description: "Affiche les pages contenant la bio d’un compte Instagram précis",
+        category: "social"
+    },
+    {
+        title: "Instagram - Mentions du compte ailleurs",
+        code: '"@USERNAME" site:*.com -site:instagram.com',
+        description: "Trouve des pages extérieures mentionnant le compte Instagram (remplacer USERNAME)",
+        category: "social"
+    },
+    {
+        title: "Instagram - Liens vers publications d’un compte",
+        code: 'site:instagram.com/USERNAME/ "likes" OR "comments"',
+        description: "Affiche les publications d’un utilisateur (remplacer USERNAME par le pseudo)",
+        category: "social"
+    },
+    {
+        title: "Instagram - Stories & Highlights d’un compte",
+        code: 'site:instagram.com/USERNAME/ "stories" OR "highlights"',
+        description: "Recherche les stories/highlights d’un compte spécifique",
+        category: "social"
     }
 ];
