@@ -1,5 +1,7 @@
 # Google Dorks Library
 
+🌐 Live demo available at: https://anodegrindyo.github.io/GoogleDorksLibrary/
+
 ## Overview
 
 **Google Dorks Library** is a lightweight web interface for browsing and filtering a collection of advanced Google search queries ("dorks"). It includes an educational tutorial to help users learn how to build their own queries ethically and responsibly.
