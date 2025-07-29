@@ -59,5 +59,11 @@ export const instagramDorks = [
         code: 'site:instagram.com/USERNAME/ "stories" OR "highlights"',
         description: "Recherche les stories/highlights d’un compte spécifique",
         category: "social"
+    },
+    {
+        title: "Instagram - Commentaires d’un utilisateur",
+        code: 'site:instagram.com "@USERNAME" intext:"comment"',
+        description: "Recherche des pages Instagram où @USERNAME a laissé un commentaire (remplacer USERNAME)",
+        category: "social"
     }
 ];
