@@ -1,0 +1,18 @@
+filetype:env "API_KEY=" OR "secret_key" OR "PRIVATE_KEY="
+
+filetype:env "SECRET_KEY" OR "DB_PASSWORD" OR "SSH_KEY"
+
+intext:"customer" or "client" or "password"
+
+filetype:env "client_secret" OR "auth_token"
+
+filetype:json "jwt" OR "key" OR "token"
+
+filetype:txt "API_KEY" OR "SECRET"
+
+filetype:json "client_secret" OR "auth_token"
+
+filetype:pdf "contract" OR "agreement"
+
+filetype:txt "password" OR "token"
+

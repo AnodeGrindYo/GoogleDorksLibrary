@@ -1,0 +1,307 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Dorks Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Google Dorks Library</h1>
+            <p class="subtitle">Collection de commandes de recherche avancées</p>
+        </header>
+
+        <div class="navigation-tabs">
+            <button class="tab-btn active" data-tab="dorks">Dorks</button>
+            <button class="tab-btn" data-tab="tutorial">Guide de Construction</button>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher un dork..." autocomplete="off">
+                <button id="searchBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- <div class="ai-assistant">
+            <button id="toggleAssistant" class="assistant-toggle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"></path>
+                </svg>
+                Assistant IA
+            </button>
+            <div id="assistantPanel" class="assistant-panel">
+                <div class="assistant-header">
+                    <h3>Assistant Google Dorks</h3>
+                    <button id="closeAssistant">×</button>
+                </div>
+                <div class="assistant-chat" id="assistantChat">
+                    <div class="message bot-message">
+                        Bonjour ! Je peux vous aider à trouver les bons Google Dorks pour vos recherches. Décrivez-moi ce que vous recherchez !
+                    </div>
+                </div>
+                <div class="assistant-input">
+                    <input type="text" id="assistantInput" placeholder="Décrivez votre recherche...">
+                    <button id="sendMessage">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Tous</button>
+            <button class="category-btn" data-category="files">Fichiers</button>
+            <button class="category-btn" data-category="login">Connexion</button>
+            <button class="category-btn" data-category="info">Information</button>
+            <button class="category-btn" data-category="vulnerabilities">Vulnérabilités</button>
+            <button class="category-btn" data-category="social">Réseaux Sociaux</button>
+        </div>
+
+        <div class="dorks-grid" id="dorksGrid">
+            <!-- Les dorks seront générés par JavaScript -->
+        </div>
+
+        <div id="tutorialTab" class="tab-content" style="display: none;">
+            <div class="tutorial-container">
+                <h2>Guide Complet de Construction des Google Dorks</h2>
+                
+                <section class="tutorial-section">
+                    <h3>Introduction</h3>
+                    <p>Les Google Dorks sont des opérateurs de recherche avancés qui permettent de trouver des informations spécifiques en utilisant la syntaxe de recherche de Google.</p>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Opérateurs de Base</h3>
+                    <div class="operators-grid">
+                        <div class="operator-card">
+                            <code>site:</code>
+                            <span>Recherche dans un site spécifique</span>
+                            <small>Ex: site:github.com password</small>
+                        </div>
+                        <div class="operator-card">
+                            <code>filetype:</code>
+                            <span>Type de fichier spécifique</span>
+                            <small>Ex: filetype:pdf confidential</small>
+                        </div>
+                        <div class="operator-card">
+                            <code>inurl:</code>
+                            <span>Mot dans l'URL</span>
+                            <small>Ex: inurl:admin login</small>
+                        </div>
+                        <div class="operator-card">
+                            <code>intitle:</code>
+                            <span>Mot dans le titre</span>
+                            <small>Ex: intitle:"index of"</small>
+                        </div>
+                        <div class="operator-card">
+                            <code>intext:</code>
+                            <span>Mot dans le texte</span>
+                            <small>Ex: intext:"password" filetype:txt</small>
+                        </div>
+                        <div class="operator-card">
+                            <code>cache:</code>
+                            <span>Version en cache</span>
+                            <small>Ex: cache:example.com</small>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Combinaisons Avancées</h3>
+                    <div class="combination-examples">
+                        <div class="example">
+                            <h4>Recherche de fichiers sensibles</h4>
+                            <code>filetype:env "DB_PASSWORD" OR "SECRET_KEY" OR "API_KEY"</code>
+                        </div>
+                        <div class="example">
+                            <h4>Pages d'administration</h4>
+                            <code>inurl:admin OR inurl:administrator OR inurl:wp-admin</code>
+                        </div>
+                        <div class="example">
+                            <h4>Cloud storage exposés</h4>
+                            <code>site:s3.amazonaws.com "confidential" OR "backup"</code>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Tableau des Opérateurs</h3>
+                    <div class="operators-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>site:</code></td>
+                                    <td>Limite la recherche à un domaine</td>
+                                    <td>site:github.com</td>
+                                </tr>
+                                <tr>
+                                    <td><code>filetype:</code></td>
+                                    <td>Spécifie le type de fichier</td>
+                                    <td>filetype:pdf</td>
+                                </tr>
+                                <tr>
+                                    <td><code>inurl:</code></td>
+                                    <td>Recherche dans l'URL</td>
+                                    <td>inurl:admin</td>
+                                </tr>
+                                <tr>
+                                    <td><code>intitle:</code></td>
+                                    <td>Recherche dans le titre</td>
+                                    <td>intitle:"login"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>intext:</code></td>
+                                    <td>Recherche dans le contenu</td>
+                                    <td>intext:"password"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>allintitle:</code></td>
+                                    <td>Tous les mots dans le titre</td>
+                                    <td>allintitle:admin login</td>
+                                </tr>
+                                <tr>
+                                    <td><code>allinurl:</code></td>
+                                    <td>Tous les mots dans l'URL</td>
+                                    <td>allinurl:admin login</td>
+                                </tr>
+                                <tr>
+                                    <td><code>OR</code></td>
+                                    <td>Opérateur logique OU</td>
+                                    <td>filetype:pdf OR filetype:doc</td>
+                                </tr>
+                                <tr>
+                                    <td><code>AND</code></td>
+                                    <td>Opérateur logique ET</td>
+                                    <td>password AND username</td>
+                                </tr>
+                                <tr>
+                                    <td><code>-</code></td>
+                                    <td>Exclure un terme</td>
+                                    <td>password -site:stackoverflow.com</td>
+                                </tr>
+                                <tr>
+                                    <td><code>" "</code></td>
+                                    <td>Recherche exacte</td>
+                                    <td>"internal use only"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>*</code></td>
+                                    <td>Joker</td>
+                                    <td>"confidential * report"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Types de Fichiers Courants</h3>
+                    <div class="file-types">
+                        <div class="file-category">
+                            <h4>Documents</h4>
+                            <code>pdf, doc, docx, xls, xlsx, ppt, pptx, txt</code>
+                        </div>
+                        <div class="file-category">
+                            <h4>Web</h4>
+                            <code>html, php, asp, js, css, json, xml</code>
+                        </div>
+                        <div class="file-category">
+                            <h4>Configuration</h4>
+                            <code>env, conf, config, ini, cfg, yaml, yml</code>
+                        </div>
+                        <div class="file-category">
+                            <h4>Base de données</h4>
+                            <code>sql, db, sqlite, mdb, accdb</code>
+                        </div>
+                        <div class="file-category">
+                            <h4>Archives</h4>
+                            <code>zip, rar, 7z, tar, gz, bz2</code>
+                        </div>
+                        <div class="file-category">
+                            <h4>Images</h4>
+                            <code>jpg, jpeg, png, gif, bmp, tiff</code>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Construction pas à pas</h3>
+                    <div class="construction-steps">
+                        <div class="step">
+                            <h4>Étape 1: Définir l'objectif</h4>
+                            <p>Que recherchez-vous ? (ex: fichiers de configuration, données sensibles, etc.)</p>
+                        </div>
+                        <div class="step">
+                            <h4>Étape 2: Choisir les opérateurs</h4>
+                            <p>Sélectionnez les opérateurs appropriés selon votre cible</p>
+                        </div>
+                        <div class="step">
+                            <h4>Étape 3: Construire la requête</h4>
+                            <p>Combinez les opérateurs avec des mots-clés pertinents</p>
+                        </div>
+                        <div class="step">
+                            <h4>Étape 4: Affiner</h4>
+                            <p>Ajoutez des filtres pour préciser vos résultats</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Bonnes Pratiques</h3>
+                    <ul class="best-practices">
+                        <li>Respectez la légalité et l'éthique</li>
+                        <li>Utilisez des tests sur vos propres systèmes</li>
+                        <li>Signalez les vulnérabilités aux propriétaires</li>
+                        <li>Ne téléchargez pas de fichiers sensibles</li>
+                        <li>Documentez vos découvertes de manière responsable</li>
+                    </ul>
+                </section>
+
+                <section class="tutorial-section">
+                    <h3>Exemples Pratiques</h3>
+                    <div class="practical-examples">
+                        <div class="example-card">
+                            <h4>Recherche de clés API</h4>
+                            <code>filetype:env "API_KEY=" OR "SECRET_KEY=" OR "PRIVATE_KEY="</code>
+                        </div>
+                        <div class="example-card">
+                            <h4>Pages d'admin ouvertes</h4>
+                            <code>intitle:"index of" "admin" OR "administrator" OR "login"</code>
+                        </div>
+                        <div class="example-card">
+                            <h4>Données clients exposées</h4>
+                            <code>filetype:csv OR filetype:xlsx "customer" "email" OR "phone"</code>
+                        </div>
+                        <div class="example-card">
+                            <h4>Configuration Docker</h4>
+                            <code>filetype:Dockerfile "ENV" "PASSWORD" OR "SECRET" OR "TOKEN"</code>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
